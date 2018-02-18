@@ -1,0 +1,5 @@
+{
+  "@type": "DateInput",
+  "id": "dueDate",
+  "title": "Input's title property"
+}

@@ -1,0 +1,6 @@
+{
+  "@type": "HttpPOST",
+  "name": "Action's name prop.",
+  "target": "https://yammer.com/comment?postId=123",
+  "body": "comment={{comment.value}}"
+}

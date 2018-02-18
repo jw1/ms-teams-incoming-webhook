@@ -1,0 +1,20 @@
+{
+  "@type": "MultichoiceInput",
+  "id": "list",
+  "title": "Pick an option",
+  "isMultiSelect": true,
+  "choices": [
+    {
+      "display": "Choice 1",
+      "value": "1"
+    },
+    {
+      "display": "Choice 2",
+      "value": "2"
+    },
+    {
+      "display": "Choice 3",
+      "value": "3"
+    }
+  ]
+}

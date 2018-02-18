@@ -1,0 +1,6 @@
+{
+  "@type": "TextInput",
+  "id": "comment",
+  "isMultiline": true,
+  "title": "Input's title property"
+}

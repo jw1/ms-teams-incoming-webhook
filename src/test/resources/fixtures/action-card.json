@@ -1,0 +1,20 @@
+{
+  "@type": "ActionCard",
+  "name": "Comment",
+  "inputs": [
+    {
+      "@type": "TextInput",
+      "id": "comment",
+      "isMultiline": true,
+      "title": "Input's title property"
+    }
+  ],
+  "actions": [
+    {
+      "@type": "HttpPOST",
+      "name": "Action's name prop.",
+      "target": "https://yammer.com/comment?postId=123",
+      "body": "comment={{comment.value}}"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "@type": "OpenUri",
+  "name": "View in Trello",
+  "targets": [
+    {
+      "os": "default",
+      "uri": "https://yammer.com/something/123"
+    },
+    {
+      "os": "iOS",
+      "uri": "yammer://u/123"
+    },
+    {
+      "os": "android",
+      "uri": "yammer://u/123"
+    },
+    {
+      "os": "windows",
+      "uri": "yammer://u/123"
+    }
+  ]
+}
+

@@ -1,0 +1,29 @@
+# Eclipse Artifacts.
+.project
+.classpath
+
+*.class
+
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.epoch
+*.log
+
+.svn/
+target/
+logs/
+.settings/
+dependency-reduced-pom.xml
+card-enrollment-service/temp/TUITION*
+
+# IntelliJ artifacts
+.idea/
+*.iml
+*.iws
+transaction-logs/
+
+# Private Webhook Samples and Demos
+src/test/java/com/jameswarlick/teams/fp

@@ -1,0 +1,24 @@
+{
+  "activityTitle": "David Claux",
+  "activitySubtitle": "9/13/2016, 3:34pm",
+  "activityImage": "https://connectorsdemo.azurewebsites.net/images/MSC12_Oscar_002.jpg",
+  "facts": [
+    {
+      "name": "Board:",
+      "value": "Name of board"
+    },
+    {
+      "name": "List:",
+      "value": "Name of list"
+    },
+    {
+      "name": "Assigned to:",
+      "value": "(none)"
+    },
+    {
+      "name": "Due date:",
+      "value": "(none)"
+    }
+  ],
+  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+}
