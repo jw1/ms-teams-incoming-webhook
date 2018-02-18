@@ -13,11 +13,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 
 /**
- * Helper class used to com.fp.enroll.data.test.test JSON serialization, comparing the provided mock
+ * Helper class used to test JSON serialization, comparing the provided mock
  * object against the JSON contained in the "filename" property.
+ * <p>
+ * Modified from original version to "guess" the json filename.
  *
  * @param <T> the generic type
- * @author mspangler
+ * @author james
  */
 public abstract class JsonTest<T> {
 
