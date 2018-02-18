@@ -27,7 +27,7 @@ public class OpenUri implements Action {
     public OpenUri() {
     }
 
-    public OpenUri(String name, String defaultTarget) throws URISyntaxException {
+    public OpenUri(String name, String defaultTarget) {
         this.name = name;
         this.targets = Lists.newArrayList(new Target(defaultTarget));
     }
