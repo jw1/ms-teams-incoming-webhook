@@ -1,5 +1,6 @@
 package com.jameswarlick.teams.api;
 
+import com.jameswarlick.teams.api.input.Choice;
 import com.jameswarlick.teams.api.input.MultichoiceInput;
 import com.jameswarlick.teams.api.input.Style;
 import com.jameswarlick.teams.api.util.JsonTest;

@@ -2,16 +2,23 @@ package com.jameswarlick.teams.api.input;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.jameswarlick.teams.api.Choice;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * From https://docs.microsoft.com/en-us/outlook/actionable-messages/card-reference#openuri-action
+ * <p>
+ * Allows the user to select from a few values, and then the selected value is
+ * attached with the given id on an HttpPOST action.
+ *
+ * @author james
+ */
 @JsonTypeName("MultichoiceInput")
 public class MultichoiceInput implements Input {
-    private String id;
 
+    private String id;
     @JsonProperty("isRequired")
     private Boolean required;
     private String title;

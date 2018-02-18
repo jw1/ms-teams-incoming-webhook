@@ -32,6 +32,7 @@ public class Section {
     private Image images;
     private List<Action> potentialActions;
 
+
     public Section() {
     }
 

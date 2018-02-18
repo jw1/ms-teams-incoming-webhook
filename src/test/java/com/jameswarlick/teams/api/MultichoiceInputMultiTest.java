@@ -1,10 +1,8 @@
 package com.jameswarlick.teams.api;
 
+import com.jameswarlick.teams.api.input.Choice;
 import com.jameswarlick.teams.api.input.MultichoiceInput;
 import com.jameswarlick.teams.api.util.JsonTest;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MultichoiceInputMultiTest extends JsonTest<MultichoiceInput> {
 

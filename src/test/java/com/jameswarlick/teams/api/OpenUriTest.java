@@ -1,11 +1,11 @@
 package com.jameswarlick.teams.api;
 
 import com.jameswarlick.teams.api.action.OpenUri;
+import com.jameswarlick.teams.api.action.OperatingSystem;
+import com.jameswarlick.teams.api.action.Target;
 import com.jameswarlick.teams.api.util.JsonTest;
 
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class OpenUriTest extends JsonTest<OpenUri> {
 

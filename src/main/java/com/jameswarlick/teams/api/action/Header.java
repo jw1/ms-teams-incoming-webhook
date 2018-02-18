@@ -1,9 +1,11 @@
-package com.jameswarlick.teams.api;
+package com.jameswarlick.teams.api.action;
 
 import java.util.Objects;
 
 /**
  * Represents and HTTP header when making an HttpPOST action / call.
+ *
+ * @author james
  */
 public class Header {
 

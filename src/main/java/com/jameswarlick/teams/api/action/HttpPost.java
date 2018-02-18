@@ -1,7 +1,6 @@
 package com.jameswarlick.teams.api.action;
 
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.jameswarlick.teams.api.Header;
 
 import java.util.ArrayList;
 import java.util.List;

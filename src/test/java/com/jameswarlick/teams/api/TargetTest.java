@@ -1,5 +1,7 @@
 package com.jameswarlick.teams.api;
 
+import com.jameswarlick.teams.api.action.OperatingSystem;
+import com.jameswarlick.teams.api.action.Target;
 import com.jameswarlick.teams.api.util.JsonTest;
 
 import java.net.URISyntaxException;
