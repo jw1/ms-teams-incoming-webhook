@@ -1,6 +1,6 @@
 # MS Teams Incoming Webhook
 
-** MS Teams Incoming Webhook ** is used to provide MS Teams message posting to Java applications.  
+**MS Teams Incoming Webhook** is used to provide MS Teams message posting to Java applications.  
 
 Features
 --------
