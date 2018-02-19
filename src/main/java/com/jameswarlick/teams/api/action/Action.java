@@ -3,6 +3,11 @@ package com.jameswarlick.teams.api.action;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
+/**
+ * Methods common to all actions.
+ *
+ * @author james
+ */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@type")
 @JsonSubTypes({
         @JsonSubTypes.Type(value = ActionCard.class, name = "ActionCard"),

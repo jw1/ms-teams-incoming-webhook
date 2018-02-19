@@ -1,9 +1,11 @@
-package com.jameswarlick.teams.api;
+package com.jameswarlick.teams.api.action;
 
 import java.util.Objects;
 
 /**
  * Defines a destination, given a particular web browser or operating system.
+ *
+ * @author james
  */
 public class Target {
 

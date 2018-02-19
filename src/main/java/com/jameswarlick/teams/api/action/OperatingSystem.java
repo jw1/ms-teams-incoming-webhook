@@ -1,4 +1,4 @@
-package com.jameswarlick.teams.api;
+package com.jameswarlick.teams.api.action;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

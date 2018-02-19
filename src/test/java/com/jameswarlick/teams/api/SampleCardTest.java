@@ -3,6 +3,7 @@ package com.jameswarlick.teams.api;
 import com.jameswarlick.teams.api.action.ActionCard;
 import com.jameswarlick.teams.api.action.HttpPost;
 import com.jameswarlick.teams.api.action.OpenUri;
+import com.jameswarlick.teams.api.input.Choice;
 import com.jameswarlick.teams.api.input.DateInput;
 import com.jameswarlick.teams.api.input.MultichoiceInput;
 import com.jameswarlick.teams.api.input.TextInput;

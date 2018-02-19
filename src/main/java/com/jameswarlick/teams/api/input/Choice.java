@@ -1,9 +1,11 @@
-package com.jameswarlick.teams.api;
+package com.jameswarlick.teams.api.input;
 
 import java.util.Objects;
 
 /**
  * Defines a value in a multichoice input.
+ *
+ * @author james
  */
 public class Choice {
 

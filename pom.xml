@@ -7,7 +7,8 @@
 
     <groupId>com.jameswarlick.teams</groupId>
     <artifactId>ms-teams-incoming-webhook</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
+
     <build>
         <plugins>
             <plugin>
@@ -22,14 +23,6 @@
     </build>
 
     <dependencies>
-
-        <!-- Lombok for code generation -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.18</version>
-            <scope>provided</scope>
-        </dependency>
 
         <!-- JSON Libraries -->
         <dependency>

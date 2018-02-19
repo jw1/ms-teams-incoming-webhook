@@ -1,7 +1,8 @@
 package com.jameswarlick.teams;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jameswarlick.teams.api.Card;
-import com.jameswarlick.teams.util.Json;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 
@@ -13,6 +14,7 @@ import com.sun.jersey.api.client.ClientResponse;
  */
 public class TeamsClient {
 
+    private static final ObjectMapper JSON = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     private String url;
 
     /**
@@ -36,12 +38,26 @@ public class TeamsClient {
                 .create()
                 .resource(url)
                 .accept("application/json")
-                .post(ClientResponse.class, Json.asJson(payload));
+                .post(ClientResponse.class, toJson(payload));
 
-        System.out.println("Request:  " + Json.asJson(payload));
+        System.out.println("Request:  " + toJson(payload));
         String output = response.getEntity(String.class);
         System.out.println("Response:" + output);
 
         return response.getStatus() == 200;
+    }
+
+    /**
+     * Serialize the given object as JSON content.
+     *
+     * @param pojo The Java object to serialize.
+     * @return Serialized JSON string.
+     */
+    private static String toJson(final Object pojo) {
+        try {
+            return JSON.writeValueAsString(pojo);
+        } catch (Exception ex) {
+            throw new IllegalArgumentException(ex);
+        }
     }
 }

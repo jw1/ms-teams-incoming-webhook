@@ -2,13 +2,22 @@ package com.jameswarlick.teams.api.action;
 
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.google.common.collect.Lists;
-import com.jameswarlick.teams.api.Target;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * From https://docs.microsoft.com/en-us/outlook/actionable-messages/card-reference#openuri-action
+ * <p>
+ * Opens a URI in a separate browser or app.
+ * Although links can be achieved through Markdown, an OpenUri action has the
+ * advantage of allowing you to specify different URIs for different operating
+ * systems, which makes it possible to open the link in an app on mobile devices.
+ *
+ * @author james
+ */
 @JsonTypeName("OpenUri")
 public class OpenUri implements Action {
 
@@ -18,7 +27,7 @@ public class OpenUri implements Action {
     public OpenUri() {
     }
 
-    public OpenUri(String name, String defaultTarget) throws URISyntaxException {
+    public OpenUri(String name, String defaultTarget) {
         this.name = name;
         this.targets = Lists.newArrayList(new Target(defaultTarget));
     }

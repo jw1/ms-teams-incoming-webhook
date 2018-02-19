@@ -7,6 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * From https://docs.microsoft.com/en-us/outlook/actionable-messages/card-reference#actioncard-action
+ * <p>
+ * Presents additional UI that contains one or more Inputs, along with
+ * associated actions that can be either OpenUri or HttpPOST types.
+ *
+ * @author james
+ */
 @JsonTypeName("ActionCard")
 public class ActionCard implements Action {
 

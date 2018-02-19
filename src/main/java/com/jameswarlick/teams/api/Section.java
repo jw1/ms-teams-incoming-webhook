@@ -1,11 +1,10 @@
 package com.jameswarlick.teams.api;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.jameswarlick.teams.api.action.Action;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * A Card object has some title information, and then contains zero or more
@@ -28,9 +27,10 @@ public class Section {
 
     private String text;
     private List<Fact> facts;
-
-    private Image images;
+    private List<Image> images;
+    @JsonProperty("potentialAction")
     private List<Action> potentialActions;
+
 
     public Section() {
     }
@@ -48,7 +48,7 @@ public class Section {
         this.activityText = activityText;
     }
 
-    public Section(String title, Boolean startGroup, String activityTitle, String activitySubtitle, String activityImage, String activityText, Image heroImage, String text, List<Fact> facts, Image images, List<Action> potentialActions) {
+    public Section(String title, Boolean startGroup, String activityTitle, String activitySubtitle, String activityImage, String activityText, Image heroImage, String text, List<Fact> facts, List<Image> images, List<Action> potentialActions) {
         this.title = title;
         this.startGroup = startGroup;
         this.activityTitle = activityTitle;
@@ -99,7 +99,7 @@ public class Section {
         return this.facts;
     }
 
-    public Image getImages() {
+    public List<Image> getImages() {
         return this.images;
     }
 
@@ -143,7 +143,7 @@ public class Section {
         this.facts = facts;
     }
 
-    public void setImages(Image images) {
+    public void setImages(List<Image> images) {
         this.images = images;
     }
 
@@ -153,7 +153,7 @@ public class Section {
 
     public void addPotentialAction(Action... actions) {
         if (null == this.potentialActions) this.potentialActions = new ArrayList<>();
-        for (Action action : actions) this.potentialActions.add(action);
+        this.potentialActions.addAll(Arrays.asList(actions));
     }
 
     public void addFact(String name, String value) {
@@ -162,7 +162,12 @@ public class Section {
 
     public void addFact(Fact... facts) {
         if (null == this.facts) this.facts = new ArrayList<>();
-        for (Fact fact : facts) this.facts.add(fact);
+        this.facts.addAll(Arrays.asList(facts));
+    }
+
+    public void addImage(Image... images) {
+        if (null == this.images) this.images = new ArrayList<>();
+        Collections.addAll(this.images, images);
     }
 
     @Override
@@ -207,7 +212,7 @@ public class Section {
         private Image heroImage;
         private String text;
         private List<Fact> facts;
-        private Image images;
+        private List<Image> images;
         private List<Action> potentialActions;
 
         SectionBuilder() {
@@ -258,7 +263,7 @@ public class Section {
             return this;
         }
 
-        public SectionBuilder images(Image images) {
+        public SectionBuilder images(List<Image> images) {
             this.images = images;
             return this;
         }
@@ -270,7 +275,7 @@ public class Section {
 
         public SectionBuilder addPotentialAction(Action... actions) {
             if (null == this.potentialActions) this.potentialActions = new ArrayList<>();
-            for (Action action : actions) this.potentialActions.add(action);
+            this.potentialActions.addAll(Arrays.asList(actions));
             return this;
         }
 
@@ -281,7 +286,13 @@ public class Section {
 
         public SectionBuilder addFact(Fact... facts) {
             if (null == this.facts) this.facts = new ArrayList<>();
-            for (Fact fact : facts) this.facts.add(fact);
+            this.facts.addAll(Arrays.asList(facts));
+            return this;
+        }
+
+        public SectionBuilder addImage(Image... images) {
+            if (null == this.images) this.images = new ArrayList<>();
+            this.images.addAll(Arrays.asList(images));
             return this;
         }
 
