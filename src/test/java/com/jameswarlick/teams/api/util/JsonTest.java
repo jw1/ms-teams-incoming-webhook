@@ -1,16 +1,14 @@
 package com.jameswarlick.teams.api.util;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
-import java.io.File;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.CaseFormat;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.JsonNodeFactory;
+import java.io.File;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Helper class used to test JSON serialization, comparing the provided mock
@@ -24,15 +22,15 @@ import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 public abstract class JsonTest<T> {
 
     private static final Logger log = LoggerFactory.getLogger(JsonTest.class);
-
-    private final Class<T> type;
-    private final String path;
-    private final T mock;
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
     static {
         MAPPER.findAndRegisterModules();
     }
+
+    private final Class<T> type;
+    private final String path;
+    private final T mock;
 
     /**
      * Instantiates a new json test
@@ -55,7 +53,6 @@ public abstract class JsonTest<T> {
         this.type = type;
         this.path = determinePath(type, filename);
         this.mock = mock;
-        MAPPER.setNodeFactory(JsonNodeFactory.withExactBigDecimals(true));
     }
 
     /**
@@ -71,7 +68,6 @@ public abstract class JsonTest<T> {
         } else {
             return "src/test/resources/fixtures/" + CaseFormat.UPPER_CAMEL.to(CaseFormat.LOWER_HYPHEN, type.getSimpleName()) + ".json";
         }
-
     }
 
     /**
@@ -100,21 +96,4 @@ public abstract class JsonTest<T> {
         T objectFromFile = MAPPER.readValue(new File(this.path), this.type);
         assertThat(objectFromFile).isEqualTo(mock);
     }
-
-    /**
-     * Deserialize the JSON file and return the object.
-     *
-     * @param <T>      The class of the deserialized file/JSON
-     * @param filename File in the fixtures folder, minus ".json"
-     * @param klass    The class of the deserialized file/JSON
-     * @return Deserialized object, ready to go.
-     */
-    public static <T> T getObject(String filename, Class<T> klass) {
-        try {
-            return MAPPER.readValue(new File("fixtures/" + filename + ".json"), klass);
-        } catch (Exception ex) {
-            throw new IllegalArgumentException(ex);
-        }
-    }
-
 }

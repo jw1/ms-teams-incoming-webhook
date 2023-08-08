@@ -6,14 +6,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.jameswarlick.teams.api.action.Action;
 
 import java.awt.*;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
-import java.util.Objects;
-import java.util.UUID;
 
 /**
  * This is the parent class of a Teams Message, and is what's delivered to MS Teams via Webhook.
- * Adapted from https://docs.microsoft.com/en-us/outlook/actionable-messages/card-reference
+ * Adapted from <a href="https://docs.microsoft.com/en-us/outlook/actionable-messages/card-reference">...</a>
  *
  * @author james
  */
@@ -175,12 +173,12 @@ public class Card {
 
     public void addPotentialAction(Action... actions) {
         if (null == this.potentialActions) this.potentialActions = new ArrayList<>();
-        for (Action action : actions) this.potentialActions.add(action);
+        Collections.addAll(this.potentialActions, actions);
     }
 
     public void addSection(Section... sections) {
         if (null == this.sections) this.sections = new ArrayList<>();
-        for (Section section : sections) this.sections.add(section);
+        Collections.addAll(this.sections, sections);
     }
 
 
@@ -288,13 +286,13 @@ public class Card {
 
         public CardBuilder addPotentialAction(Action... actions) {
             if (null == this.potentialActions) this.potentialActions = new ArrayList<>();
-            for (Action action : actions) this.potentialActions.add(action);
+            Collections.addAll(this.potentialActions, actions);
             return this;
         }
 
         public CardBuilder addSection(Section... sections) {
             if (null == this.sections) this.sections = new ArrayList<>();
-            for (Section section : sections) this.sections.add(section);
+            Collections.addAll(this.sections, sections);
             return this;
         }
 

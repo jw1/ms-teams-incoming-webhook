@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
  *
  * @author james
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@type")
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@type")
 @JsonSubTypes({
         @JsonSubTypes.Type(value = ActionCard.class, name = "ActionCard"),
         @JsonSubTypes.Type(value = HttpPost.class, name = "HttpPOST"),

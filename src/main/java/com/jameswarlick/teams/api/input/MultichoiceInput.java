@@ -4,11 +4,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
 /**
- * From https://docs.microsoft.com/en-us/outlook/actionable-messages/card-reference#openuri-action
+ * From <a href="https://docs.microsoft.com/en-us/outlook/actionable-messages/card-reference#openuri-action">...</a>
  * <p>
  * Allows the user to select from a few values, and then the selected value is
  * attached with the given id on an HttpPOST action.
@@ -96,7 +97,7 @@ public class MultichoiceInput implements Input {
 
     public void addChoice(Choice... choices) {
         if (null == this.choices) this.choices = new ArrayList<>();
-        for (Choice choice : choices) this.choices.add(choice);
+        Collections.addAll(this.choices, choices);
     }
 
     public void setMultiSelect(Boolean multiSelect) {

@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.Objects;
 
 /**
- * From https://docs.microsoft.com/en-us/outlook/actionable-messages/card-reference#textinput
+ * From <a href="https://docs.microsoft.com/en-us/outlook/actionable-messages/card-reference#textinput">...</a>
  * <p>
  * Use this input type when you need users to provide free text, such as the
  * response to a survey question.  The input from the user is typically

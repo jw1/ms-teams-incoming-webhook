@@ -4,11 +4,12 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.jameswarlick.teams.api.input.Input;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
 /**
- * From https://docs.microsoft.com/en-us/outlook/actionable-messages/card-reference#actioncard-action
+ * From <a href="https://docs.microsoft.com/en-us/outlook/actionable-messages/card-reference#actioncard-action">...</a>
  * <p>
  * Presents additional UI that contains one or more Inputs, along with
  * associated actions that can be either OpenUri or HttpPOST types.
@@ -62,12 +63,12 @@ public class ActionCard implements Action {
 
     public void addInput(Input... inputs) {
         if (null == this.inputs) this.inputs = new ArrayList<>();
-        for (Input input : inputs) this.inputs.add(input);
+        Collections.addAll(this.inputs, inputs);
     }
 
     public void addAction(Action... actions) {
         if (null == this.actions) this.actions = new ArrayList<>();
-        for (Action action : actions) this.actions.add(action);
+        Collections.addAll(this.actions, actions);
     }
 
 
@@ -121,13 +122,13 @@ public class ActionCard implements Action {
 
         public ActionCardBuilder addInput(Input... inputs) {
             if (null == this.inputs) this.inputs = new ArrayList<>();
-            for (Input input : inputs) this.inputs.add(input);
+            Collections.addAll(this.inputs, inputs);
             return this;
         }
 
         public ActionCardBuilder addAction(Action... actions) {
             if (null == this.actions) this.actions = new ArrayList<>();
-            for (Action action : actions) this.actions.add(action);
+            Collections.addAll(this.actions, actions);
             return this;
         }
 
