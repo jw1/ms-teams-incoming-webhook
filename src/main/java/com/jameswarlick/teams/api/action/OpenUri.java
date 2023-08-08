@@ -5,11 +5,12 @@ import com.google.common.collect.Lists;
 
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
 /**
- * From https://docs.microsoft.com/en-us/outlook/actionable-messages/card-reference#openuri-action
+ * From <a href="https://docs.microsoft.com/en-us/outlook/actionable-messages/card-reference#openuri-action">...</a>
  * <p>
  * Opens a URI in a separate browser or app.
  * Although links can be achieved through Markdown, an OpenUri action has the
@@ -56,7 +57,7 @@ public class OpenUri implements Action {
 
     public void addTarget(Target... targets) {
         if (null == this.targets) this.targets = new ArrayList<>();
-        for (Target target : targets) this.targets.add(target);
+        Collections.addAll(this.targets, targets);
     }
 
     @Override

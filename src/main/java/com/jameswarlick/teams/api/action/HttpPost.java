@@ -7,17 +7,12 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * From https://docs.microsoft.com/en-us/outlook/actionable-messages/card-reference#httppost-action
+ * From <a href="https://docs.microsoft.com/en-us/outlook/actionable-messages/card-reference#httppost-action">...</a>
  * <p>
  * Makes a call to an external Web service.
  */
 @JsonTypeName("HttpPOST")
 public class HttpPost implements Action {
-
-    /**
-     * If this is added as a header, the value is appended to the already posted card.
-     */
-    public static final String CARD_ACTION_STATUS_HEADER = "CARD-ACTION-STATUS";
 
     private String name;
     private String target;

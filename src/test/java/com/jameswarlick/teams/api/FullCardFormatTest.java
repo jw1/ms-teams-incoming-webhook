@@ -12,7 +12,7 @@ import com.jameswarlick.teams.api.util.JsonTest;
 import java.net.URISyntaxException;
 
 /**
- * From https://messagecardplayground.azurewebsites.net/
+ * From <a href="https://messagecardplayground.azurewebsites.net/">...</a>
  * <p>
  * Build the "full card format" example with the Java API, make sure it matches
  * the sample.
