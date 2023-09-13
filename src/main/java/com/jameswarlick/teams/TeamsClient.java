@@ -15,7 +15,7 @@ import com.sun.jersey.api.client.ClientResponse;
 public class TeamsClient {
 
     private static final ObjectMapper JSON = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-    private String url;
+    private final String url;
 
     /**
      * Webhooks in Teams are associated with a URL (and channel).
@@ -33,7 +33,7 @@ public class TeamsClient {
      * @return True if it worked, false if not.
      */
     public boolean sendMessage(Card payload) {
-
+        
         ClientResponse response = Client
                 .create()
                 .resource(url)
