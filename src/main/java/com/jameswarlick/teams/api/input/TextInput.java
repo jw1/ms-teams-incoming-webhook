@@ -10,7 +10,7 @@ import java.util.Objects;
  * <p>
  * Use this input type when you need users to provide free text, such as the
  * response to a survey question.  The input from the user is typically
- * attached to an HttpPOST component.
+ * attached to an HttpPost component.
  *
  * @author james
  */
